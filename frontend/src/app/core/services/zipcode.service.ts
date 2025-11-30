@@ -42,11 +42,11 @@ export class ZipCodeService {
       return of(null);
     }
 
-    const zipData = this.zipCodesData.find(item => item.zip === zipCode);
+    const zipData = this.zipCodesData.find(item => item.zip_code === zipCode);
 
     if (zipData) {
       const info: ZipCodeInfo = {
-        zip: zipData.zip,
+        zip: zipData.zip_code,
         city: zipData.city,
         state: zipData.state,
         latitude: zipData.latitude,
