@@ -1,0 +1,136 @@
+<div class="container mt-4 mb-5">
+  <!-- Loading -->
+  <div *ngIf="loading" class="text-center py-5">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- Error -->
+  <div *ngIf="errorMessage" class="alert alert-danger">
+    {{ errorMessage }}
+    <button class="btn btn-outline-secondary mt-3" routerLink="/surveys">
+      Back to List
+    </button>
+  </div>
+
+  <!-- Survey Details -->
+  <div *ngIf="survey && !loading" class="card">
+    <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+      <h3 class="mb-0">Survey Details #{{ survey.id }}</h3>
+      <div>
+        <button class="btn btn-light btn-sm me-2" (click)="editSurvey()">
+          Edit
+        </button>
+        <button class="btn btn-danger btn-sm" (click)="deleteSurvey()">
+          Delete
+        </button>
+      </div>
+    </div>
+
+    <div class="card-body">
+      <!-- Personal Information -->
+      <div class="detail-section">
+        <h5 class="section-title">Personal Information</h5>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <strong>Name:</strong>
+            <p>{{ survey.firstName }} {{ survey.lastName }}</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <strong>Email:</strong>
+            <p>{{ survey.email }}</p>
+          </div>
+          <div class="col-md-6 mb-3" *ngIf="survey.phoneNumber">
+            <strong>Phone:</strong>
+            <p>{{ survey.phoneNumber }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Address Information -->
+      <div class="detail-section">
+        <h5 class="section-title">Address</h5>
+        <div class="row">
+          <div class="col-md-12 mb-3">
+            <strong>Street Address:</strong>
+            <p>{{ survey.streetAddress }}</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <strong>City:</strong>
+            <p>{{ survey.city }}</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <strong>State:</strong>
+            <p>{{ survey.state }}</p>
+          </div>
+          <div class="col-md-4 mb-3">
+            <strong>ZIP Code:</strong>
+            <p>{{ survey.zipCode }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Survey Details -->
+      <div class="detail-section">
+        <h5 class="section-title">Survey Information</h5>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <strong>Survey Date:</strong>
+            <p>{{ formatDate(survey.surveyDate) }}</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <strong>Recommendation:</strong>
+            <p>
+              <span class="badge bg-success">{{ formatEnum(survey.recommendation) }}</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Campus Liked -->
+      <div class="detail-section">
+        <h5 class="section-title">What They Liked About Campus</h5>
+        <div class="campus-liked-list">
+          <span *ngFor="let item of survey.campusLiked" class="badge bg-primary me-2 mb-2">
+            {{ formatEnum(item) }}
+          </span>
+        </div>
+      </div>
+
+      <!-- Interest Source -->
+      <div class="detail-section">
+        <h5 class="section-title">Interest Source</h5>
+        <p>{{ formatEnum(survey.interestSource) }}</p>
+      </div>
+
+      <!-- Comments -->
+      <div class="detail-section" *ngIf="survey.comments">
+        <h5 class="section-title">Additional Comments</h5>
+        <p class="comments-box">{{ survey.comments }}</p>
+      </div>
+
+      <!-- Metadata -->
+      <div class="detail-section">
+        <h5 class="section-title">Record Information</h5>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <strong>Created:</strong>
+            <p>{{ formatDate(survey.createdAt) }}</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <strong>Last Updated:</strong>
+            <p>{{ formatDate(survey.updatedAt) }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <div class="mt-3">
+    <button class="btn btn-outline-secondary" routerLink="/surveys">
+      &larr; Back to Survey List
+    </button>
+  </div>
+</div>

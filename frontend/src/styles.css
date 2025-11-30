@@ -1,0 +1,70 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Form Styles */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.form-control:focus {
+  border-color: #006633;
+  box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.25);
+}
+
+.btn-primary {
+  background-color: #006633;
+  border-color: #006633;
+}
+
+.btn-primary:hover {
+  background-color: #004d26;
+  border-color: #004d26;
+}
+
+.invalid-feedback {
+  display: block;
+  color: #dc3545;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}
+
+/* Table Styles */
+.table {
+  background-color: white;
+}
+
+.table thead {
+  background-color: #006633;
+  color: white;
+}
+
+/* Utility Classes */
+.text-success {
+  color: #006633 !important;
+}
+
+.bg-success {
+  background-color: #006633 !important;
+}
+
+.alert {
+  border-radius: 0.25rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}

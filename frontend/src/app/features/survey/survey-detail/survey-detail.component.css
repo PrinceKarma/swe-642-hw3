@@ -1,0 +1,55 @@
+.detail-section {
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.detail-section:last-child {
+  border-bottom: none;
+}
+
+.section-title {
+  color: #006633;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #006633;
+}
+
+.detail-section strong {
+  color: #333;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.detail-section p {
+  margin-bottom: 0;
+  color: #666;
+}
+
+.campus-liked-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.comments-box {
+  background-color: #f8f9fa;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border-left: 3px solid #006633;
+  white-space: pre-wrap;
+}
+
+.badge {
+  padding: 0.5em 0.75em;
+  font-size: 0.9rem;
+}
+
+.card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.card-header {
+  border-bottom: 3px solid #004d26;
+}

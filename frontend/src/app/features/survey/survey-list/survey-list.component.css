@@ -1,0 +1,47 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.table-success {
+  background-color: #006633 !important;
+  color: white;
+}
+
+.table-hover tbody tr:hover {
+  background-color: rgba(0, 102, 51, 0.05);
+}
+
+.card {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.btn-group-sm .btn {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+}
+
+.badge {
+  padding: 0.5em 0.75em;
+  font-size: 0.875rem;
+}
+
+.display-4 {
+  font-size: 3rem;
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.875rem;
+  }
+
+  .btn-group-sm .btn {
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+  }
+
+  .display-4 {
+    font-size: 2rem;
+  }
+}
