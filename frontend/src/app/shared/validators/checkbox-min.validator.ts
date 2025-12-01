@@ -1,3 +1,6 @@
+/**
+ * Validator for minimum checkbox selections.
+ */
 import { AbstractControl, ValidationErrors, ValidatorFn } from '@angular/forms';
 
 /**

@@ -1,3 +1,6 @@
+/**
+ * Global exception handler for REST API errors.
+ */
 package edu.gmu.swe642.survey.exception;
 
 import lombok.extern.slf4j.Slf4j;

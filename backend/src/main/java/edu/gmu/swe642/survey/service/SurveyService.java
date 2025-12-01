@@ -1,3 +1,6 @@
+/**
+ * Service interface for survey CRUD operations.
+ */
 package edu.gmu.swe642.survey.service;
 
 import edu.gmu.swe642.survey.dto.SurveyRequestDTO;

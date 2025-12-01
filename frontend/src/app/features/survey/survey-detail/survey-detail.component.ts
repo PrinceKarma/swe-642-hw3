@@ -1,3 +1,6 @@
+/**
+ * Component for viewing survey details.
+ */
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { SurveyService } from '../../../core/services/survey.service';

@@ -1,3 +1,6 @@
+/**
+ * JPA repository for survey database operations.
+ */
 package edu.gmu.swe642.survey.repository;
 
 import edu.gmu.swe642.survey.model.Survey;

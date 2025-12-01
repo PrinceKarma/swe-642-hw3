@@ -1,3 +1,6 @@
+/**
+ * Root component with navigation bar and routing.
+ */
 import { Component } from '@angular/core';
 
 @Component({

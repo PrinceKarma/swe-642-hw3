@@ -1,3 +1,6 @@
+/**
+ * Routing configuration for navigation paths.
+ */
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { SurveyListComponent } from './features/survey/survey-list/survey-list.component';

@@ -1,3 +1,7 @@
+/**
+ * Survey data models, enums, and DTOs.
+ */
+
 // Enums
 export enum Recommendation {
   VERY_LIKELY = 'VERY_LIKELY',

@@ -1,3 +1,6 @@
+/**
+ * Component for displaying survey list.
+ */
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { SurveyService } from '../../../core/services/survey.service';

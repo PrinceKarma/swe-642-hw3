@@ -1,3 +1,6 @@
+/**
+ * DTO for survey create and update requests.
+ */
 package edu.gmu.swe642.survey.dto;
 
 import edu.gmu.swe642.survey.model.CampusLiked;

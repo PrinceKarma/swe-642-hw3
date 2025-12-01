@@ -1,4 +1,4 @@
-# Multi-stage Docker build for Spring Boot backend
+# Multi-stage build for Spring Boot backend.
 
 # Stage 1: Build the application
 FROM maven:3.9-eclipse-temurin-17 AS build

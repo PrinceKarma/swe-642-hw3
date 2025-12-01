@@ -1,3 +1,6 @@
+/**
+ * Service for ZIP code lookup and auto-fill.
+ */
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';

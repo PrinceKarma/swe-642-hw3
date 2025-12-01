@@ -1,3 +1,6 @@
+/**
+ * Main Spring Boot application for the student survey REST API.
+ */
 package edu.gmu.swe642.survey;
 
 import org.springframework.boot.SpringApplication;

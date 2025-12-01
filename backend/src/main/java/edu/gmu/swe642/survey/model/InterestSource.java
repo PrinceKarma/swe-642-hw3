@@ -1,3 +1,6 @@
+/**
+ * Enum for how students learned about GMU.
+ */
 package edu.gmu.swe642.survey.model;
 
 public enum InterestSource {

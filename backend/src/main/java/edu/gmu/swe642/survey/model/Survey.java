@@ -1,3 +1,6 @@
+/**
+ * JPA entity for student survey data with validation and timestamps.
+ */
 package edu.gmu.swe642.survey.model;
 
 import jakarta.persistence.*;

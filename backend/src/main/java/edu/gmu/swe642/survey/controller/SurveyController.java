@@ -1,3 +1,6 @@
+/**
+ * REST controller for survey endpoints at /api/surveys.
+ */
 package edu.gmu.swe642.survey.controller;
 
 import edu.gmu.swe642.survey.dto.SurveyRequestDTO;
