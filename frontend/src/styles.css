@@ -1,4 +1,11 @@
 /* Global Styles */
+:root {
+  --gmu-green: #006633;
+  --gmu-yellow: #FFCC33;
+  --gmu-light-green: #e8f5e8;
+  --gmu-dark-green: #004422;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -22,19 +29,25 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.form-control:focus {
-  border-color: #006633;
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--gmu-green);
   box-shadow: 0 0 0 0.2rem rgba(0, 102, 51, 0.25);
 }
 
-.btn-primary {
-  background-color: #006633;
-  border-color: #006633;
+/* Button Styles */
+.btn-primary,
+.btn-success {
+  background-color: var(--gmu-green) !important;
+  border-color: var(--gmu-green) !important;
+  color: white !important;
 }
 
-.btn-primary:hover {
-  background-color: #004d26;
-  border-color: #004d26;
+.btn-primary:hover,
+.btn-success:hover {
+  background-color: var(--gmu-dark-green) !important;
+  border-color: var(--gmu-dark-green) !important;
+  color: white !important;
 }
 
 .invalid-feedback {
@@ -50,17 +63,26 @@ body {
 }
 
 .table thead {
-  background-color: #006633;
+  background-color: var(--gmu-green);
   color: white;
+}
+
+.table-success {
+  background-color: var(--gmu-light-green) !important;
+}
+
+.table-success th {
+  background-color: var(--gmu-green) !important;
+  color: white !important;
 }
 
 /* Utility Classes */
 .text-success {
-  color: #006633 !important;
+  color: var(--gmu-green) !important;
 }
 
 .bg-success {
-  background-color: #006633 !important;
+  background-color: var(--gmu-green) !important;
 }
 
 .alert {
