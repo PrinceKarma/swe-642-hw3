@@ -108,11 +108,10 @@
               class="form-control"
               id="zipCode"
               formControlName="zipCode"
-              [class.is-invalid]="hasError('zipCode')"
-              placeholder="12345"
-              maxlength="5">
-            <div class="invalid-feedback" *ngIf="hasError('zipCode')">
-              {{ getErrorMessage('zipCode') }}
+              placeholder="e.g., 22030"
+                    (blur)="onZipCodeBlur()" >
+                  <div class="invalid-feedback" *ngIf="hasError('zipCode')">
+                    {{ getErrorMessage('zipCode') }}
             </div>
           </div>
 

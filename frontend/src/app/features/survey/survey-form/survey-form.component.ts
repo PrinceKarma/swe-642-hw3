@@ -54,7 +54,6 @@ export class SurveyFormComponent implements OnInit {
   ngOnInit(): void {
     this.initializeForm();
     this.checkEditMode();
-    this.setupZipCodeListener();
   }
 
   /**
@@ -134,16 +133,23 @@ export class SurveyFormComponent implements OnInit {
     });
   }
 
-  /**
-   * Setup ZIP code auto-fill listener
-   */
-  private setupZipCodeListener(): void {
-    this.surveyForm.get('zipCode')?.valueChanges.subscribe(zipCode => {
-      if (zipCode && zipCode.length === 5) {
-        this.lookupZipCode(zipCode);
+
+  onZipCodeBlur(): void {
+      const zipCodeControl = this.surveyForm.get('zipCode');
+      const zipCode = zipCodeControl?.value;
+      
+      // 1. Trim the input value immediately
+      const trimmedZipCode = zipCode ? zipCode.trim() : '';
+
+      // 2. Only look up if the trimmed input is exactly 5 digits long  
+      if (trimmedZipCode.length === 5) {
+          this.lookupZipCode(trimmedZipCode);
+      } else {
+          // Clear fields immediately for incomplete, empty, or invalid input
+          this.surveyForm.patchValue({ city: '', state: '' });
       }
-    });
-  }
+    }
+
 
   /**
    * Lookup city and state from ZIP code

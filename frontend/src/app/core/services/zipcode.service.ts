@@ -37,16 +37,28 @@ export class ZipCodeService {
   /**
    * Get city and state for a given ZIP code
    */
-  getZipCodeInfo(zipCode: string): Observable<ZipCodeInfo | null> {
-    if (!this.dataLoaded || !zipCode || zipCode.length !== 5) {
-      return of(null);
+getZipCodeInfo(zipCode: string): Observable<ZipCodeInfo | null> {
+    const trimmedZipCode = zipCode ? zipCode.trim() : '';
+    
+    // 2. Enforce 5-digit requirement using the trimmed value.
+    if (!this.dataLoaded || trimmedZipCode.length !== 5) {
+      return of(null); 
     }
 
-    const zipData = this.zipCodesData.find(item => item.zip_code === zipCode);
+    // Convert trimmedZipCode to number for comparison since JSON has numeric zip_code
+    const zipCodeNum = parseInt(trimmedZipCode, 10);
+    
+    // 3. Add safety check for non-numeric input.
+    if (isNaN(zipCodeNum)) {
+        return of(null); 
+    }
+
+    // Lookup: This performs a strict numeric comparison (number === number)
+    const zipData = this.zipCodesData.find(item => item.zip_code === zipCodeNum);
 
     if (zipData) {
       const info: ZipCodeInfo = {
-        zip: zipData.zip_code,
+        zip: zipData.zip_code.toString(),
         city: zipData.city,
         state: zipData.state,
         latitude: zipData.latitude,
